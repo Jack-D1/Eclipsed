@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin-top: 150px;
+	background-color: #282b30; 
+	color: white;
+	text-align: center;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.topbar{
+	position: fixed; 
+	margin-bottom: 20px; 
+	left: 0px; 
+	top: -1px; 
+	background-color: #41464f;
+	width: 100%;
+	align-content:stretch;
+	z-index: 999;
+	text-align: left;
+}
+
+.search{
+	margin-top: 10px;
+}
+
+.uHead{
+	margin-top: 70px;
+}
+.logo {
+	margin-right: 20px;
+	
+}
+.myAccPic {
+	position: relative;
+	top: 5px;
+	margin-right: 10px;
+}
+
+#posts{
+	width: auto;
+}
+
+.makePost{
+	position: relative; 
+	margin-top: 70px; 
+}
+
+#userpost{
+	height: 50px
+}
+@media (min-width: 1024px){
+	body{
+		margin-top: 70px;
+	}
+}
