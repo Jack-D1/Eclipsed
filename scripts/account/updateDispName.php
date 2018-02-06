@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("/scripts/validation/connection.php");
 
 if (isset($_POST['disp_name'])){
     $name = $_POST['disp_name'];

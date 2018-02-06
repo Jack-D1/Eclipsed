@@ -1,5 +1,5 @@
 <?php
-include("check.php");
+include("/scripts/validation/check.php");
 echo '<link rel="stylesheet" href="default.css">';
 $returnURL = $_SESSION['username'] . ".php";
 

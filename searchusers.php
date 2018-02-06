@@ -1,6 +1,6 @@
 <?php
-include("connection.php");
-include("check.php");
+include("scripts/validation/connection.php");
+include("scripts/validation/check.php");
 $searchTerm = $_GET['usersearch'];
 echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 echo '<link rel="stylesheet" href="default.css">';

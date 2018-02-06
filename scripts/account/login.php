@@ -6,7 +6,7 @@
 
 <?php
 session_start();
-include("connection.php");
+include("/scripts/validation/connection.php");
 
 $Username = $_POST['uName'];
 $Password = $_POST['pWord'];

@@ -1,6 +1,6 @@
 <?php
-include("check.php");
-include("connection.php");
+include("/scripts/validation/check.php");
+include("/scripts/validation/connection.php");
 
 $MessagingUser = $_POST['MessagingUser'];
 

@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("scripts/validation/connection.php");
 
 $Username = $_POST['uName'];
 $Password = $_POST['pWord'];
@@ -44,8 +44,8 @@ if (mysqli_num_rows($checkuser) == 1){
 	header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 	header("Cache-Control: post-check=0, pre-check=0", false);
 	header("Pragma: no-cache");
-	include("connection.php");
-	include("check.php");
+	include("scripts/validation/connection.php");
+	include("scripts/validation/check.php");
 	$ThisID = ');
 	fwrite($fp, $UID);
 	fwrite($fp, $fileContents);
@@ -59,7 +59,7 @@ if (mysqli_num_rows($checkuser) == 1){
 	$_SESSION['username'] = $user;
 	mysqli_close($connection);
 	mysqli_close($stmt);
-	header("Location: home.php");
+	header("Location: /home.php");
 		
 
 }		
