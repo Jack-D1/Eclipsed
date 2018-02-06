@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
-include("check.php");
-include("connection.php");
+include("scripts/validation/check.php");
+include("scripts/validation/connection.php");
 
 $username = $_SESSION['username'];
 $userID = $_SESSION['UserID'];
