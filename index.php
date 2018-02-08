@@ -100,13 +100,13 @@ a:hover {
    		<input name = "usersearch" type="text" autocomplete="off" placeholder = "Search for users">
    		<input type="submit" name = "search" value = "search">
 	</form>	
-	<form method = "post" action = "messaging.php" style="display: inline-block;">
+	<form method = "post" action = "/scripts/messaging/messaging.php" style="display: inline-block;">
 		<input type = "text" name = "MessagingUser" placeholder = "Username of user to message" required>
 		<input type = "submit" name = "submit" value = "Send Message">
 	</form>
 	<img src = "uploads/<?php echo $_SESSION['UserID'];?>.jpg" alt = "Profile Photo" class="myAccPic" style = "width: 25px; height: 25px; border-radius: 50%;">
 	<a href = "<?php echo $_SESSION['username']; ?>.php">My account</a>
-	<a href = logout.php>Log Out</a> <br>
+	<a href = scripts/account/logout.php>Log Out</a>
 </div>
         
 <div id="wrapper">
@@ -121,7 +121,7 @@ a:hover {
         </div>
     
         <div id="chatbox"><?php
-		$logfile = $_SESSION['file'];
+		$logfile = "scripts/messaging/".$_SESSION['file'];
         if (file_exists ($logfile) && filesize ($logfile) > 0) {
             $handle = fopen ( $logfile, "r" );
             $contents = fread ($handle, filesize($logfile));
@@ -147,7 +147,7 @@ $("#submitmsg").click(function(){
 	event.preventDefault(); 
     var clientmsg = $("#usermsg").val();
 	if(clientmsg){
-		$.post("post.php", {text: clientmsg});             
+		$.post("scripts/messaging/post.php", {text: clientmsg});             
 		$("#usermsg").attr("value", "");
 		loadLog;
 		return true;

@@ -1,18 +1,18 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="default.css">
+		<link rel="stylesheet" href="../../default.css">
 	</head>
 </html>
 
 <?php
 session_start();
-include("/scripts/validation/connection.php");
+include("../validation/connection.php");
 
 $Username = $_POST['uName'];
 $Password = $_POST['pWord'];
 
 $accountexists = "";
-$accNotFound = 'Your account does not exist <br> <a href = "index.html">Click here to try again</a><br> <a href = "signup.html">Click here to sign up</a>';
+$accNotFound = 'Your account does not exist <br> <a href = "../../index.html">Click here to try again</a><br> <a href = "../../signup.html">Click here to sign up</a>';
 
 $Username = mysqli_real_escape_string($connection, $Username);
 
@@ -37,6 +37,6 @@ if(mysqli_num_rows($CheckAccount) != 1){
 }
 
 if ($accountexists == "TRUE"){
-	header('Location: home.php');
+	header('Location: ../../home.php');
 }
 ?>

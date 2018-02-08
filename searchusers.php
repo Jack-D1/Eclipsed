@@ -10,9 +10,13 @@ echo '<div class = "topbar" position = "absolute">
    				<input name = "usersearch" type="text" autocomplete="off" placeholder = "Search for users" required>
    				<input type="submit" name = "search" value = "search">
 			</form>	
+			<form method = "post" action = "/scripts/messaging/messaging.php" style="display: inline-block;">
+				<input type = "text" name = "MessagingUser" placeholder = "Username of user to message" required>
+				<input type = "submit" name = "submit" value = "Send Message">
+			</form>
 			<img src = "uploads/'.$_SESSION['UserID'].'.jpg"alt = "Profile Photo" class="myAccPic" style = "width: 25px; height: 25px; border-radius: 50%;">
 			<a href = "'. $_SESSION['username'].'.php">My account</a>
-			<a href = logout.php>Log Out</a> <br>
+			<a href = scripts/account/logout.php>Log Out</a> <br>
 		</div>';
 
 $search = "'%" . $searchTerm . "%'";
