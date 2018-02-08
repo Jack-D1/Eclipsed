@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include("connection.php");
+	include("../validation/connection.php");
     $text = $_POST['text'];
 	$UID = $_SESSION['UserID'];
 	$text = mysqli_real_escape_string($connection, $text);
