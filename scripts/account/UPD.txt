@@ -34,7 +34,7 @@
 			<input name = "usersearch" type="text" autocomplete="off" placeholder = "Search for users">
 			<input type="submit" name = "search" value = "search">
 		</form>	
-		<form method = "post" action = "messaging.php" style="display: inline-block;">
+		<form method = "post" action = "/scripts/messaging/messaging.php" style="display: inline-block;">
 			<input type = "text" name = "MessagingUser" placeholder = "Username of user to message" required>
 			<input type = "submit" name = "submit" value = "Send Message">
 		</form>

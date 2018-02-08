@@ -1,5 +1,5 @@
 <?php
-include("scripts/validation/connection.php");
+include("../scripts/validation/connection.php");
 
 $Username = $_POST['uName'];
 $Password = $_POST['pWord'];
@@ -19,12 +19,8 @@ $Password = password_hash($Password, PASSWORD_BCRYPT, $options);
 //Check if the user tries to register with an in use username and redirects them to the sign up page
 $checkuser = mysqli_query($connection, "SELECT username FROM user WHERE username = '$Username'");
 
-if (mysqli_num_rows($checkuser) == 1){
-	?><script type = "text/javascript">
-				alert("That username is already in use sorry");
-	</script>
-	<?php	  
-	header('Location: signup.html');
+if (mysqli_num_rows($checkuser) == 1){  
+	header('Location: ../../signup.html');
 }else{
 
 
@@ -37,15 +33,15 @@ if (mysqli_num_rows($checkuser) == 1){
 	$UID = $queryResult['UserID'];
 
 	//Creates a users profile page
-	$file = $Username . '.php';
+	$file = '../../'.$Username . '.php';
 	$fp = fopen($file, 'a');
 	$fileContents = file_get_contents("UPD.txt");
 	fwrite($fp, '<?php
 	header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 	header("Cache-Control: post-check=0, pre-check=0", false);
 	header("Pragma: no-cache");
-	include("scripts/validation/connection.php");
-	include("scripts/validation/check.php");
+	include("/scripts/validation/connection.php");
+	include("/scripts/validation/check.php");
 	$ThisID = ');
 	fwrite($fp, $UID);
 	fwrite($fp, $fileContents);
@@ -58,8 +54,7 @@ if (mysqli_num_rows($checkuser) == 1){
 	$_SESSION['UserID'] = $UID;
 	$_SESSION['username'] = $user;
 	mysqli_close($connection);
-	mysqli_close($stmt);
-	header("Location: /home.php");
+	header("Location: ../../home.php");
 		
 
 }		
