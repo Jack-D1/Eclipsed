@@ -1,21 +1,97 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Log in</title>
-<link rel="stylesheet" href="default.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>Log in</title>
+		<link rel="stylesheet" href="default.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		
 
-<body>
-	<form method = "post" action = "scripts/account/login.php">
-		Username <input type = "text" name = "uName">
-		<br>
-		Password <input type = "password" name = "pWord">
-		<br>
-		<input type = "submit" name = "sumbit" value = "Login">
-	</form>
-	<br>
-	<a href="signup.html">Sign Up</a>
-</body>
+				a{ 
+
+					border: 2px #ACD8F0 solid;  
+
+					border-radius: 40px; 
+
+					padding: 4px 15px; 
+
+				} 
+
+
+
+				table{ 
+
+					position: absolute; 
+
+					right: 160px; 
+
+				} 
+
+
+
+				.align{ 
+
+					text-align: right; 
+
+				} 
+
+
+
+				.MidAlign{ 
+
+					text-align: center; 
+
+				} 
+
+
+
+				.submitbutton{ 
+
+					color: white;  
+
+					background-color: #282b30; 
+
+					border: 2px #ACD8F0 solid;  
+
+					border-radius: 40px; 
+
+					padding: 4px 15px; 
+
+				} 
+		
+		</style>
+	</head>
+
+	<body>
+		<form method = "post" action = "scripts/account/login.php">
+			<table>
+				<tr>
+					<td>Username</td>
+					<td><input type = "text" name = "uName"></td>
+				</tr>
+
+				<tr>
+					<td>Password</td>
+					<td><input type = "password" name = "pWord"></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td><input type = "submit" name = "sumbit" value = "Login" class = "submitbutton"></td>
+				</tr>
+				<tr><td></td><td></td></tr>
+				<tr><td></td><td></td></tr>
+				<tr>
+					<td></td>
+					<td><a href="signup.html">Sign Up</a></td>
+				</tr>
+			</table>
+
+
+
+		</form>
+
+
+	</body>
 </html>

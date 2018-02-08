@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <?php
 include("scripts/validation/check.php");
 include("scripts/validation/connection.php");
@@ -23,13 +23,13 @@ $userID = $_SESSION['UserID'];
    		<input name = "usersearch" type="text" autocomplete="off" placeholder = "Search for users">
    		<input type="submit" name = "search" value = "search">
 	</form>	
-	<form method = "post" action = "messaging.php" style="display: inline-block;">
+	<form method = "post" action = "/scripts/messaging/messaging.php" style="display: inline-block;">
 		<input type = "text" name = "MessagingUser" placeholder = "Username of user to message" required>
 		<input type = "submit" name = "submit" value = "Send Message">
 	</form>
 	<img src = "uploads/<?php echo $_SESSION['UserID'];?>.jpg" alt = "Profile Photo" class="myAccPic" style = "width: 25px; height: 25px; border-radius: 50%;">
 	<a href = "<?php echo $_SESSION['username']; ?>.php">My account</a>
-	<a href = logout.php>Log Out</a>
+	<a href = scripts/account/logout.php>Log Out</a>
 </div>
 
 <div  class = "makePost">
@@ -81,7 +81,7 @@ $userID = $_SESSION['UserID'];
 				event.preventDefault(); //prevents the form from reloading the page
 				var clientpost = $("#userpost").val(); //Sets the variable client post equal to the value of the box
 				if (clientpost){
-					$.post("posting.php", {text: clientpost}); //Sends the variable clientpost to the posting file 
+					$.post("scripts/post/posting.php", {text: clientpost}); //Sends the variable clientpost to the posting file 
 					$("#userpost").attr("value", ""); //replaces the contents of the box with blank text
 					loadPost();
 					return true;
