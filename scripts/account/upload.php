@@ -1,9 +1,9 @@
 <?php
-include("/scripts/validation/check.php");
-echo '<link rel="stylesheet" href="default.css">';
-$returnURL = $_SESSION['username'] . ".php";
+include("../validation/check.php");
+echo '<link rel="stylesheet" href="../../default.css">';
+$returnURL = "../../" . $_SESSION['username'] . ".php";
 
-$target_dir = "uploads/";
+$target_dir = "../../uploads/";
 $fname = $_SESSION['UserID'].".";
 $target_file = $target_dir . $fname . "jpg";
 $imageFileType = strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));

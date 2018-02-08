@@ -34,13 +34,13 @@
 			<input name = "usersearch" type="text" autocomplete="off" placeholder = "Search for users">
 			<input type="submit" name = "search" value = "search">
 		</form>	
-		<form method = "post" action = "messaging.php" style="display: inline-block;">
+		<form method = "post" action = "/scripts/messaging/messaging.php" style="display: inline-block;">
 			<input type = "text" name = "MessagingUser" placeholder = "Username of user to message" required>
 			<input type = "submit" name = "submit" value = "Send Message">
 		</form>
 		<img src = "uploads/<?php echo $_SESSION['UserID'];?>.jpg" alt = "Profile Photo" class="myAccPic" style = "width: 25px; height: 25px; border-radius: 50%;">
 		<a href = "<?php echo $_SESSION['username']; ?>.php">My account</a>
-		<a href = logout.php>Log Out</a> 
+		<a href = scripts/account/logout.php>Log Out</a>
 	</div>
     <div class = "uHead"> 
        <img src="<?php echo $PF; ?>" alt="Profile Photo" width="168px" height="168px">
@@ -90,7 +90,7 @@
 			
 			$.ajax({
 				type: 'post',
-				url: 'follow.php',
+				url: 'scripts/account/follow.php',
 				data: {
 					action:action,
 					follower:follower,
@@ -107,7 +107,7 @@
         <?php }else{ ?>
         <!-- For a user visiting their own profile !-->
            
-           <form action="upload.php" method = "post" enctype="multipart/form-data">
+           <form action="/scripts/account/upload.php" method = "post" enctype="multipart/form-data">
            		Upload image to use as your profile picture:
            		<input type="file" name = "fileToUpload" id = "fileToUpload" required>
            		<input type="submit" value = "Upload" name = "submit">
@@ -139,7 +139,7 @@
             var userID = "<?php echo $ThisID;?>";
             $.ajax({
                 type: 'post',
-				url: 'updateDispName.php',
+				url: 'scripts/account/updateDispName.php',
 				data: {
 					disp_name:dispName,
                     user_id:userID,
@@ -162,7 +162,7 @@
             }else{
                 $.ajax({
                     type: 'post',
-                    url: 'updatePassword.php',
+                    url: 'scripts/account/updatePassword.php',
                     data: {
                         p_word:pword2,
                         user_id:userID,

@@ -1,5 +1,5 @@
 <?php
-include("scripts/validation/connection.php");
+include("../validation/connection.php");
 
 $Username = $_POST['uName'];
 $Password = $_POST['pWord'];
@@ -33,7 +33,7 @@ if (mysqli_num_rows($checkuser) == 1){
 	$UID = $queryResult['UserID'];
 
 	//Creates a users profile page
-	$file = $Username . '.php';
+	$file = "../../" . $Username . '.php';
 	$fp = fopen($file, 'a');
 	$fileContents = file_get_contents("UPD.txt");
 	fwrite($fp, '<?php
@@ -54,8 +54,7 @@ if (mysqli_num_rows($checkuser) == 1){
 	$_SESSION['UserID'] = $UID;
 	$_SESSION['username'] = $user;
 	mysqli_close($connection);
-	mysqli_close($stmt);
-	header("Location: /home.php");
+	header("Location: ../../home.php");
 		
 
 }		

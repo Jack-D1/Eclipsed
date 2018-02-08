@@ -1,5 +1,5 @@
 <?php
-include ("/scripts/validation/connection.php");
+include ("../validation/connection.php");
 $action = $_POST['action'];
 $follower = $_POST['follower'];
 $user = $_POST['userID'];
