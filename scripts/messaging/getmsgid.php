@@ -1,6 +1,6 @@
 <?php
 		session_start();
-		include("/scripts/validation/connection.php");
+		include("../validation/connection.php");
 		
 
 		//Gets the logged in users ID
