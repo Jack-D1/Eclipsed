@@ -20,7 +20,7 @@ $Password = password_hash($Password, PASSWORD_BCRYPT, $options);
 $checkuser = mysqli_query($connection, "SELECT username FROM user WHERE username = '$Username'");
 
 if (mysqli_num_rows($checkuser) == 1){  
-	header('Location: signup.html');
+	header('Location: ../../signup.html');
 }else{
 
 
