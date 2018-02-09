@@ -47,6 +47,15 @@ if (mysqli_num_rows($checkuser) == 1){
 	fwrite($fp, $fileContents);
 	fclose($fp);
 
+	
+	//Creates a users profile photo, the default one 
+	$file = "../../uploads/". $UID. '.jpg';
+	$fileContents = file_get_contents("../../uploads/default.jpg");
+	$fp = fopen($file, 'a');
+	fwrite($fp, $fileContents);
+	fclose($fp);
+	
+	
 	//Makes a user follow themselves so they can see their own posts on the home page 
 	$showOwnPosts = mysqli_query($connection, "INSERT INTO following VALUES ('$UID', '$UID')");
 	
