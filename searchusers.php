@@ -18,7 +18,7 @@ echo '<div class = "topbar" position = "absolute">
 			<a href = "'. $_SESSION['username'].'.php">My account</a>
 			<a href = scripts/account/logout.php>Log Out</a> <br>
 		</div>';
-
+$searchTerm = mysqli_real_escape_string($connection, $searchTerm);
 $search = "'%" . $searchTerm . "%'";
 $getUsers = mysqli_query($connection, "SELECT username, displayname, UserID FROM user WHERE username LIKE $search OR displayname LIKE $search");
 if(mysqli_num_rows($getUsers) > 0){
