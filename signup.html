@@ -14,9 +14,6 @@
 
 <style> 
 
-  
-
-  
 
 a{ 
 
@@ -70,19 +67,10 @@ table{
 
 } 
 
+.submitbutton:hover{
+	cursor: pointer;
+}
   
-
-.ExistingAccount{ 
-
-    position: absolute; 
-
-    top: 220px; 
-
-    right: 215px; 
-
-     
-
-} 
 
 </style> 
 
@@ -94,7 +82,7 @@ table{
 
     <div class = "signup"> 
 
-        <form method = "post" onSubmit="return checkForm(this);" action = "/scripts/account/sign.php"> 
+        <form method = "post" onSubmit="return checkForm(this);" action = "scripts/account/sign.php"> 
 
             <table> 
 
@@ -137,6 +125,18 @@ table{
                     <td class = "MidAlign"><input type = "submit" name = "sumbit" value = "Sign up" class = "submitbutton"></td> 
 
                 </tr> 
+				
+				<tr><td></td><td></td></tr>
+				<tr><td></td><td></td></tr>
+				
+				<tr>
+				
+					<td>Already have an account? Click Here to login: </td>
+						
+					
+					<td><a href="index.html">Log In</a> </td>
+					
+				</tr>
 
             </table>     
 
@@ -147,14 +147,6 @@ table{
      
 
     <br> 
-
-     
-
-    <div class = "ExistingAccount"> 
-
-        Already have an account? Click Here to login: <a href="index.html">Log In</a> 
-
-    </div> 
 
      
 
