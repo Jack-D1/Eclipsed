@@ -25,17 +25,15 @@ if(mysqli_num_rows($CheckAccount) != 1){
 }else{
 	$queryResult = mysqli_fetch_assoc($CheckAccount);
 	if(password_verify($Password, $queryResult['password'])){
-			mysqli_close($connection);
-			$user = $queryResult['username'];
 			$_SESSION['UserID'] = $queryResult['UserID'];
-			$_SESSION['username'] = $user;
+			$_SESSION['username'] = $queryResult['username'];
 			$accountexists = "TRUE";
 			
 	}else{
 		echo $accNotFound;
 	}
 }
-
+mysqli_close($connection);
 if ($accountexists == "TRUE"){
 	header('Location: ../../home.php');
 }
