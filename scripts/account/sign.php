@@ -22,8 +22,6 @@ $checkuser = mysqli_query($connection, "SELECT username FROM user WHERE username
 if (mysqli_num_rows($checkuser) == 1){  
 	header('Location: ../../signup.html');
 }else{
-
-
 	
 	$addUser = mysqli_query($connection, "INSERT INTO user(username, displayname, password) VALUES ('$Username', '$Displayname', '$Password')");
 	$getUserInfo = mysqli_query($connection, "SELECT * FROM user WHERE username = '$Username'");
@@ -59,9 +57,9 @@ if (mysqli_num_rows($checkuser) == 1){
 	//Makes a user follow themselves so they can see their own posts on the home page 
 	$showOwnPosts = mysqli_query($connection, "INSERT INTO following VALUES ('$UID', '$UID')");
 	
-	$user = $queryResult['username'];
+	
 	$_SESSION['UserID'] = $UID;
-	$_SESSION['username'] = $user;
+	$_SESSION['username'] = $queryResult['username'];
 	mysqli_close($connection);
 	header("Location: ../../home.php");
 		
